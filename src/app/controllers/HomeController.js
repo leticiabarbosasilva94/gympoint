@@ -1,6 +1,6 @@
 class HomeController {
   index(req, res) {
-    res.send('Home controller');
+    res.send();
   }
 }
 

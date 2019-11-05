@@ -2,6 +2,8 @@ import express from 'express';
 import homeRoutes from './routes/home';
 import studentsRoutes from './routes/students';
 
+import './database';
+
 class App {
   constructor() {
     this.app = express();
