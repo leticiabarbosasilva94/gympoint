@@ -20,7 +20,7 @@ class StudentsController {
 
       return res.json(student);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map(err => `${err.path}: ${err.message}`)
       });
     }
@@ -41,7 +41,7 @@ class StudentsController {
       const destroyedStudent = student.destroy();
       return res.json(destroyedStudent);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map(err => `${err.path}: ${err.message}`)
       });
     }
@@ -52,7 +52,7 @@ class StudentsController {
       const studentStored = await Student.create(req.body);
       return res.send(studentStored);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map(err => `${err.path}: ${err.message}`)
       });
     }
@@ -74,7 +74,7 @@ class StudentsController {
 
       return res.json(updatedStudent);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map(err => `${err.path}: ${err.message}`)
       });
     }
