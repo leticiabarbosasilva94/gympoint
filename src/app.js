@@ -14,6 +14,10 @@ class App {
 
   middlewares() {
     this.app.use(express.json());
+    this.app.use((err, req, res, next) => {
+      if (err) return res.status(400).json({ errors: ['Bad request'] });
+      return next();
+    });
   }
 
   routes() {
