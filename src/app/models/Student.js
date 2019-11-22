@@ -36,7 +36,11 @@ export default class Student extends Model {
               msg: 'Empty value not allowed'
             },
             isFloat: {
-              msg: 'Must be float'
+              msg: 'Weight must be float'
+            },
+            max: {
+              args: [635],
+              msg: 'The heaviest person in the world weighs 635kg. Fix this.'
             }
           }
         },
@@ -48,7 +52,11 @@ export default class Student extends Model {
               msg: 'Empty value not allowed'
             },
             isFloat: {
-              msg: 'Must be float'
+              msg: 'Height must be float'
+            },
+            max: {
+              args: [2.51],
+              msg: 'The tallest person in the world is 2.51m tall. Fix this.'
             }
           }
         },

@@ -1,3 +1,5 @@
+require('dotenv/config');
+
 module.exports = {
   dialect: process.env.DATABASE_DIALECT,
   host: process.env.DATABASE_HOST,
