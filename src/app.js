@@ -2,6 +2,7 @@ import express from 'express';
 import homeRoutes from './routes/home';
 import studentsRoutes from './routes/students';
 import sessionRoutes from './routes/session';
+import planRoutes from './routes/plan';
 
 import './database';
 
@@ -22,8 +23,9 @@ class App {
 
   routes() {
     this.app.use('/', homeRoutes);
-    this.app.use('/students', studentsRoutes);
     this.app.use('/session', sessionRoutes);
+    this.app.use('/students', studentsRoutes);
+    this.app.use('/plans', planRoutes);
   }
 }
 
