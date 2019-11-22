@@ -10,7 +10,12 @@ module.exports = {
   define: {
     timestamps: true,
     underscored: true,
-    underscoredAll: true
+    underscoredAll: true,
+
+    // Seems like there's a bug in sequelize:
+    // https://github.com/sequelize/sequelize/issues/10857
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   },
   dialectOptions: {
     timezone: process.env.TZ
