@@ -9,5 +9,9 @@ const router = new Router();
 router.use(authMiddleware);
 
 router.get('/', PlanController.index);
+router.post('/', PlanController.store);
+router.put('/:id', PlanController.update);
+router.get('/:id', PlanController.show);
+router.delete('/:id', PlanController.delete);
 
 export default router;

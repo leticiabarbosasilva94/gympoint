@@ -12,7 +12,7 @@ module.exports = {
     underscored: true,
     underscoredAll: true,
 
-    // Seems like there's a bug in sequelize:
+    // Seems like there's a bug in sequelize 5.21.2
     // https://github.com/sequelize/sequelize/issues/10857
     createdAt: 'created_at',
     updatedAt: 'updated_at'
