@@ -1,9 +1,14 @@
 import express from 'express';
 import StudentsController from '../app/controllers/StudentsController';
+import CheckinController from '../app/controllers/CheckinController';
+
 import authMiddleware from '../app/middlewares/auth';
 
 const { Router } = express;
 const router = new Router();
+
+router.post('/:id/checkins', CheckinController.store);
+router.get('/:id/checkins', CheckinController.index);
 
 // Only logged users bellow
 router.use(authMiddleware);

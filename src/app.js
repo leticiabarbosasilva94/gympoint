@@ -4,7 +4,8 @@ import studentsRoutes from './routes/students';
 import sessionRoutes from './routes/session';
 import planRoutes from './routes/plan';
 import registrationRoutes from './routes/registration';
-import checkinRoutes from './routes/chekin';
+// Moved to students
+// import checkinRoutes from './routes/chekin';
 
 import './database';
 
@@ -29,7 +30,8 @@ class App {
     this.app.use('/students', studentsRoutes);
     this.app.use('/plans', planRoutes);
     this.app.use('/registration', registrationRoutes);
-    this.app.use('/checkins', checkinRoutes);
+    // Moved to students
+    // this.app.use('/checkins', checkinRoutes);
   }
 }
 

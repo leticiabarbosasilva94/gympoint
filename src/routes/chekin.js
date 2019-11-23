@@ -1,3 +1,4 @@
+// MOVED TO students.js
 import express from 'express';
 import CheckinController from '../app/controllers/CheckinController';
 
