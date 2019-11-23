@@ -1,4 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
+import { isAfter } from 'date-fns';
 
 export default class Registration extends Model {
   static init(sequelize) {
@@ -9,7 +10,7 @@ export default class Registration extends Model {
           defaultValue: '',
           validate: {
             isDate: {
-              msg: 'Invalid date'
+              msg: 'Invalid start date'
             }
           }
         },
@@ -18,7 +19,7 @@ export default class Registration extends Model {
           defaultValue: '',
           validate: {
             isDate: {
-              msg: 'Invalid date'
+              msg: 'Invalid end date'
             }
           }
         },
@@ -29,6 +30,12 @@ export default class Registration extends Model {
             isDecimal: {
               msg: 'Incorrect price value'
             }
+          }
+        },
+        active: {
+          type: Sequelize.VIRTUAL,
+          get() {
+            return isAfter(this.end_date, new Date());
           }
         }
       },

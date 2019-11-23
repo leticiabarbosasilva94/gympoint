@@ -9,7 +9,7 @@ export default class ControllerBase {
     if (this.delete) this.delete = this.delete.bind(this);
   }
 
-  error(req, res, message) {
+  error(req, res, message, code = 401) {
     let messages;
 
     if (Array.isArray(message)) {
@@ -18,7 +18,7 @@ export default class ControllerBase {
       messages = [message];
     }
 
-    return res.json(400, {
+    return res.json(code, {
       errors: messages
     });
   }
