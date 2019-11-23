@@ -8,11 +8,11 @@ class RegistrationMail {
   }
 
   async handle({ data }) {
-    const { student, start_date, end_date, price } = data;
+    const { student, start_date, end_date, price, subject, mailText } = data;
 
     await Mail.sendMail({
       to: `${student.name} <${student.email}>`,
-      subject: 'Matricula ativada',
+      subject,
       template: 'registration',
       context: {
         student: student.name,
@@ -26,7 +26,8 @@ class RegistrationMail {
           "dd 'de' MMMM 'de' yyyy', às' H:mm'h'",
           { locale: pt }
         ),
-        price: `R$ ${price.toFixed(2).replace('.', ',')}`
+        price: `R$ ${price.toFixed(2).replace('.', ',')}`,
+        mailText
       }
     });
   }

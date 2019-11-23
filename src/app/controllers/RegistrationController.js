@@ -85,6 +85,8 @@ class RegistrationController extends ControllerBase {
       const registration = await Registration.create(registrationData);
 
       await Queue.add(RegistrationMail.key, {
+        subject: 'Matricula criada',
+        mailText: 'Sua matricula foi criada.',
         student,
         plan,
         start_date,
@@ -158,6 +160,8 @@ class RegistrationController extends ControllerBase {
       const newRegistration = await registration.update(registrationData);
 
       await Queue.add(RegistrationMail.key, {
+        subject: 'Matricula atualizada',
+        mailText: 'Sua matricula foi atualizada.',
         student,
         plan,
         start_date,
