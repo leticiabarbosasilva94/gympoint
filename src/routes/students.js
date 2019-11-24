@@ -7,8 +7,8 @@ import authMiddleware from '../app/middlewares/auth';
 const { Router } = express;
 const router = new Router();
 
-router.post('/:id/checkins', CheckinController.store);
-router.get('/:id/checkins', CheckinController.index);
+router.post('/:student_id/checkins', CheckinController.store);
+router.get('/:student_id/checkins', CheckinController.index);
 
 // Only logged users bellow
 router.use(authMiddleware);
