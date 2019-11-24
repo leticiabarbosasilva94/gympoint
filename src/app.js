@@ -4,6 +4,7 @@ import studentsRoutes from './routes/students';
 import sessionRoutes from './routes/session';
 import planRoutes from './routes/plan';
 import registrationRoutes from './routes/registration';
+import helpOrderRoutes from './routes/helpOrder';
 
 import './database';
 
@@ -28,6 +29,7 @@ class App {
     this.app.use('/students', studentsRoutes);
     this.app.use('/plans', planRoutes);
     this.app.use('/registration', registrationRoutes);
+    this.app.use('/help-orders', helpOrderRoutes);
   }
 }
 

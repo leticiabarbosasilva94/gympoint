@@ -9,6 +9,26 @@ export default class ControllerBase {
     if (this.delete) this.delete = this.delete.bind(this);
   }
 
+  index(req, res) {
+    return res.json(400, 'NOT IMPLEMENTED');
+  }
+
+  store(req, res) {
+    return res.json(400, 'NOT IMPLEMENTED');
+  }
+
+  update(req, res) {
+    return res.json(400, 'NOT IMPLEMENTED');
+  }
+
+  show(req, res) {
+    return res.json(400, 'NOT IMPLEMENTED');
+  }
+
+  delete(req, res) {
+    return res.json(400, 'NOT IMPLEMENTED');
+  }
+
   error(req, res, message, code = 400) {
     let messages;
 
