@@ -9,7 +9,7 @@ export default class ControllerBase {
     if (this.delete) this.delete = this.delete.bind(this);
   }
 
-  error(req, res, message, code = 401) {
+  error(req, res, message, code = 400) {
     let messages;
 
     if (Array.isArray(message)) {
