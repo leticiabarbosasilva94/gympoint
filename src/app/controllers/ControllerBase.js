@@ -10,23 +10,23 @@ export default class ControllerBase {
   }
 
   index(req, res) {
-    return res.json(400, 'NOT IMPLEMENTED');
+    return res.status(400).json('NOT IMPLEMENTED');
   }
 
   store(req, res) {
-    return res.json(400, 'NOT IMPLEMENTED');
+    return res.status(400).json('NOT IMPLEMENTED');
   }
 
   update(req, res) {
-    return res.json(400, 'NOT IMPLEMENTED');
+    return res.status(400).json('NOT IMPLEMENTED');
   }
 
   show(req, res) {
-    return res.json(400, 'NOT IMPLEMENTED');
+    return res.status(400).json('NOT IMPLEMENTED');
   }
 
   delete(req, res) {
-    return res.json(400, 'NOT IMPLEMENTED');
+    return res.status(400).json('NOT IMPLEMENTED');
   }
 
   error(req, res, message, code = 400) {
@@ -38,7 +38,7 @@ export default class ControllerBase {
       messages = [message];
     }
 
-    return res.json(code, {
+    return res.status(code).json({
       errors: messages
     });
   }

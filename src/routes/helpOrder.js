@@ -9,7 +9,7 @@ const router = new Router();
 // Only logged users bellow
 router.use(authMiddleware);
 
-router.get('/', HelpOrderController.index);
+router.post('/:id', HelpOrderController.store);
 router.get('/no-answer', HelpOrderNoAnswerController.index);
 
 export default router;
