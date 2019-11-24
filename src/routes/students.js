@@ -14,6 +14,7 @@ router.get('/:student_id/checkins', CheckinController.index);
 
 // Help Orders
 router.post('/:student_id/help-orders', StudentHelpController.store);
+router.get('/:student_id/help-orders', StudentHelpController.index);
 
 // Only logged users bellow
 router.use(authMiddleware);
